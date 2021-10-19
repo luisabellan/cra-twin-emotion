@@ -2,7 +2,6 @@
   "name": "cra-twin-emotion",
   "version": "0.1.0",
   "description": "Starter that comes with CRA, Tailwind, Emotion, Twin, pre-commit, prettier, husky, craco and ESLint",
-  "private": true,
   "bin": {
     "create-boilerplate": "./create-app.js"
   },
