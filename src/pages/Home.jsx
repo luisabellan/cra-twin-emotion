@@ -7,10 +7,12 @@ const Home = () => {
 
   return (
     <HomeContainer>
+      <div>
       <Main>
         <Header>
           Features
         </Header>
+
         <List>
           <Item><Link href='https://reactjs.org/docs/create-a-new-react-app.html#create-react-app'>CRA</Link></Item>  
           <Item><Link href='https://tailwindcss.com/'>Taiwind</Link></Item>
@@ -22,17 +24,18 @@ const Home = () => {
           <Item><Link href='https://github.com/gsoft-inc/craco'>Craco</Link></Item>
           <Item><Link href='#'>CI</Link></Item>
         </List>
+
         <Paragraph>
-          To get started, edit <code>src/pages/Home.js</code> and save to
+          <p css={{marginRight:'0.5rem'}}>To get started, edit</p><code css={{marginRight:'1rem', marginLeft:'0.5rem'}}>src/pages/Home.js</code> and save to
           reload.
         </Paragraph>
-      </Main>
 
+      </Main>
+      </div>
       <Footer>
-        Made with <span tw='text-xl'>❤️</span> and <span tw='text-3xl'>☕</span> by{' '}
-        <FooterLink href='https://luisabellan.com'>Luis Abellan</FooterLink>
+        <p tw='flex flex-row self-baseline'>Made with</p><span tw='flex flex-row self-baseline text-xl'>❤️</span><p tw='flex flex-row '>and</p><span tw='flex flex-row text-3xl '>☕</span>
+        <a tw='flex flex-row' css={{marginLeft:'1rem'}} href='https://luisabellan.com'>by Luis Abellan</a>
       </Footer>
-   
     </HomeContainer>
   );
 };
@@ -44,36 +47,41 @@ export default Home;
 // Styles
 
 const HomeContainer = styled.div`
-  ${tw`flex flex-col items-center justify-center self-center h-screen   `} 
+  ${tw`flex flex-col  justify-center h-screen`} 
 `;
 
 const Main = styled.main`
-  ${tw`flex flex-col items-center justify-center self-center  `}
+  ${tw`flex flex-col justify-center`}
 `;
 
 const Header = styled.h1`
-  ${tw`text-3xl font-semibold justify-center mt-6 mb-10  pt-9`}
+  ${tw`flex  justify-center  text-3xl font-semibold  mt-6 mb-10  pt-9`}
 `;
 const List = styled.ul`
-  ${tw`flex flex-col items-center justify-center self-center  `}
+  ${tw`flex flex-col justify-center items-center`}
 `;
 
 const Item = styled.li`
-  ${tw`flex flex-col items-center justify-center self-center  `}
+  ${tw`flex `}
 `;
 
 const Link = styled.a`
-  ${tw`text-xl justify-center py-2`}
+  ${tw`text-xl py-2`}
 `;
-const FooterLink = styled(Link)`
 
+
+const Paragraph = styled.div`
+  ${tw`flex flex-row justify-center flex-wrap text-lg md:text-xl mt-40`}
+  p {
+    margin-right: 0.25rem;
+    margin-left: 0.25 rem;
+  }
   
-`;
-
-const Paragraph = styled.p`
-  ${tw`text-xl justify-center my-24`}
-`;
+  `;
 
 const Footer = styled.footer`
-  ${tw`text-xl justify-center`}
+  ${tw`flex self-center justify-center text-black mt-20`}
+  
+
 `;
+

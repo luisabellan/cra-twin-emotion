@@ -1,7 +1,45 @@
 {
   "name": "cra-twin-emotion",
   "version": "0.1.0",
+  "description": "Starter that comes with CRA, Tailwind, Emotion, Twin, pre-commit, prettier, husky, craco and ESLint",
   "private": true,
+  "bin": {
+    "create-boilerplate": "./create-app.js"
+  },
+  "keywords": [
+    "cra",
+    "create-react-app",
+    "twin",
+    "tailwind",
+    "tailwindcss",
+    "emotion",
+    "pre-commit",
+    "husky",
+    "lint-staged",
+    "prettier",
+    "eslint"
+  ],
+  "author": "Luis Abellan",
+  "license": "MIT",
+  "homepage": "https://github.com/luisabellan/cra-twin-emotion",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luisabellan/cra-twin-emotion.git"
+  },
+  "bugs": "https://github.com/luisabellan/cra-twin-emotion/issues",
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
+    "lint:scss:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
+    "lint:js": "eslint . --ext .js,.jsx",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint": "eslint 'src/**/*.{js,jsx}'",
+    "lint:fix": "eslint 'src/**/*.{js,jsx}' --fix",
+    "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'"
+  },
   "dependencies": {
     "@babel/eslint-parser": "^7.15.8",
     "@craco/craco": "^6.3.0",
@@ -18,35 +56,10 @@
     "react-router-dom": "^5.3.0",
     "react-scripts": "^4.0.3",
     "tailwindcss-children": "^2.1.0",
-    "twin.macro": "^2.8.0"
-  },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject",
-    "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
-    "lint:scss:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
-    "lint:js": "eslint . --ext .js,.jsx",
-    "lint:js:fix": "npm run lint:js -- --fix",
-    "lint": "eslint 'src/**/*.{js,jsx}'",
-    "lint:fix": "eslint 'src/**/*.{js,jsx}' --fix",
-    "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "twin.macro": "^2.8.0",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^9",
@@ -64,6 +77,21 @@
     "prettier": "^2.4.1",
     "sass": "^1.43.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "babelMacros": {
     "twin": {
@@ -91,13 +119,14 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
-      "eslint . --fix", "git add"
+      "eslint . --fix",
+      "git add"
     ],
     "src/**/*.scss": [
-      "stylelint --syntax scss --fix", "git add"
+      "stylelint --syntax scss --fix",
+      "git add"
     ]
   },
-
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
