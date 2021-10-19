@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Starter that comes with CRA, Tailwind, Emotion, Twin, pre-commit, prettier, husky, craco and ESLint",
   "bin": {
-    "create-boilerplate": "./create-app.js"
+    "create-boilerplate": "./bin/create-app.js"
   },
   "keywords": [
     "cra",
