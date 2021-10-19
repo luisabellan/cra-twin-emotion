@@ -2,9 +2,6 @@
   "name": "cra-twin-emotion",
   "version": "0.1.0",
   "description": "Starter that comes with CRA, Tailwind, Emotion, Twin, pre-commit, prettier, husky, craco and ESLint",
-  "bin": {
-    "create-boilerplate": "./bin/create-app.js"
-  },
   "keywords": [
     "cra",
     "create-react-app",
@@ -20,17 +17,24 @@
   ],
   "author": "Luis Abellan",
   "license": "MIT",
-  "homepage": "https://github.com/luisabellan/cra-twin-emotion",
+  "homepage": "https://github.com/luisabellan/cra-twin-emotion#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/luisabellan/cra-twin-emotion.git"
   },
   "bugs": "https://github.com/luisabellan/cra-twin-emotion/issues",
+  "main": "dist/Home.js",
+  "module": "dist/Home.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
+    "generate": "plop",
     "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
     "lint:scss:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
     "lint:js": "eslint . --ext .js,.jsx",
@@ -61,6 +65,9 @@
     "twin.macro": "^2.8.0"
   },
   "devDependencies": {
+    "plop": "^2.7.6",
+    "@babel/cli": "^7.15.7",
+    "@babel/preset-react": "^7.14.5",
     "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
     "babel-plugin-preval": "^5.0.0",
@@ -90,6 +97,11 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
     ]
   },
   "babelMacros": {

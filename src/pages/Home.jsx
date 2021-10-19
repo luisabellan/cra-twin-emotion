@@ -26,15 +26,14 @@ const Home = () => {
         </List>
 
         <Paragraph>
-          <p css={{marginRight:'0.5rem'}}>To get started, edit</p><code css={{marginRight:'1rem', marginLeft:'0.5rem'}}>src/pages/Home.js</code> and save to
+          <p css={{marginRight:'0.5rem'}}>To get started, edit</p><code css={{marginRight:'0.5rem', marginLeft:'0.5rem'}}>src/pages/Home.js</code> and save to
           reload.
         </Paragraph>
 
       </Main>
       </div>
       <Footer>
-        <p tw='flex flex-row self-baseline'>Made with</p><span tw='flex flex-row self-baseline text-xl'>❤️</span><p tw='flex flex-row '>and</p><span tw='flex flex-row text-3xl '>☕</span>
-        <a tw='flex flex-row' css={{marginLeft:'1rem'}} href='https://luisabellan.com'>by Luis Abellan</a>
+        <a tw='flex flex-row' css={{marginLeft:'1rem'}} href='https://luisabellan.com'>©️ 2021 Luis Abellan</a>
       </Footer>
     </HomeContainer>
   );
@@ -80,7 +79,7 @@ const Paragraph = styled.div`
   `;
 
 const Footer = styled.footer`
-  ${tw`flex self-center justify-center text-black mt-20`}
+  ${tw`flex flex-row justify-center text-black pt-20`}
   
 
 `;
